@@ -1,0 +1,18 @@
+{
+  "name": "regexp-viewer",
+  "version": "0.0.1",
+  "dependencies": {
+    "react": "~0.13.1"
+  },
+  "authors": [
+    "takumi4ichi <takumi4ichi@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

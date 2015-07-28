@@ -1,5 +1,5 @@
 {
-  "name": "RegexpViewer",
+  "name": "regexp-viewer",
   "description": "Regular Expression Viewer",
   "version": "0.0.1",
   "homepage": "https://github.com/takumi4ichi",
@@ -22,9 +22,11 @@
     "node": ">= 0.8.0"
   },
   "devDependencies": {
+    "chai": "^2.3.0",
     "gulp": "^3.9.0",
-    "mocha": "^2.2.4",
-    "chai": "^2.3.0"
+    "gulp-browserify": "^0.5.1",
+    "gulp-react": "^3.0.1",
+    "mocha": "^2.2.4"
   },
   "dependencies": {
     "jregexp": "^0.0.3"
