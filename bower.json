@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "dependencies": {
     "react": "~0.13.1",
-    "bootstrap": "~3.3.5"
+    "bootstrap": "~3.3.5",
+    "ace": "~1.2.0"
   },
   "authors": [
     "takumi4ichi <takumi4ichi@gmail.com>"

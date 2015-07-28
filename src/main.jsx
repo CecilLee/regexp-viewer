@@ -1,12 +1,17 @@
 var jregexp = require('jregexp');
 
+
 var REForm = React.createClass({
     view: function(){
         var re = document.getElementById('re').value;
         var ast = jregexp.parse(re);
         if(ast.ast){
+            var syntax = ace.edit("re-stage");
+            syntax.setTheme("ace/theme/twilight");
+            syntax.getSession().setMode("ace/mode/javascript");
             var aststr = JSON.stringify(ast.ast(), null, '  ');
-            console.log(aststr);
+            syntax.setValue(aststr);
+            console.log();
         }
     },
     render: function(){
