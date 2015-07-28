@@ -990,11 +990,11 @@ var jregexp = (function(){
         ),
         jcon.seq(
             jcon.string('\\u'),
-            jcon.regex(/\d{4}/)
+            jcon.regex(/[0-9a-fA-F]{4}/)
         ).setAst('unicode'),
         jcon.seq(
             jcon.string('\\x'),
-            jcon.regex(/\d{2}/)
+            jcon.regex(/[0-9a-fA-F]{2}/)
         ).setAst('hex')
     );
 
@@ -1055,12 +1055,7 @@ var jregexp = (function(){
         jcon.and(
             RegularExpressionNonTerminator,
             jcon.not(
-                jcon.or(
-                    jcon.string('$'),           //$只能去匹配basic_reg_exp的rhs中的end-of-line
-                    jcon.string('\\'),
-                    jcon.string('/'),
-                    jcon.string('[')
-                )
+                SPEC_CHAR
             )
         ),
         backslashSequence,
@@ -1119,8 +1114,8 @@ var jregexp = (function(){
 
     var one_char_or_elem_RE = jcon.or(
         jcon.string('.').setAst('wildcard'),
-        //RegularExpressionChar,
-        ORD_CHAR,
+        RegularExpressionChar,
+        //ORD_CHAR,
         bracket_expression
     );
 
@@ -1206,24 +1201,36 @@ var jregexp = (function(){
 },{"jcon":2}],5:[function(require,module,exports){
 var jregexp = require('jregexp');
 
-var MainStage = React.createClass({displayName: "MainStage",
+var REForm = React.createClass({displayName: "REForm",
     view: function(){
         var re = document.getElementById('re').value;
-        console.log(jregexp.parse(re));
+        var ast = jregexp.parse(re);
+        if(ast.ast){
+            var aststr = JSON.stringify(ast.ast(), null, '  ');
+            console.log(aststr);
+        }
     },
     render: function(){
         return (
-            React.createElement("div", null, 
-                React.createElement("input", {id: "re", type: "text"}), 
-                React.createElement("input", {type: "button", value: "view", onClick: this.view})
+            React.createElement("div", {className: "panel panel-default"}, 
+                React.createElement("div", {className: "panel-heading"}, "RE Expression"), 
+                React.createElement("div", {className: "panel-body"}, 
+                    React.createElement("div", {className: "input-group input-group-lg"}, 
+                        React.createElement("span", {className: "input-group-addon"}, "re"), 
+                        React.createElement("input", {className: "form-control", id: "re", type: "text", placeholder: "^abc"}), 
+                        React.createElement("span", {className: "input-group-btn"}, 
+                            React.createElement("input", {className: "btn btn-default", type: "button", value: "view", onClick: this.view})
+                        )
+                    )
+                )
             )
         );
     }
 });
 
 React.render(
-    React.createElement(MainStage, null),
-    document.getElementById('main-stage')
+    React.createElement(REForm, null),
+    document.getElementById('re-form')
 );
 
 },{"jregexp":4}]},{},[5])

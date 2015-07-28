@@ -2,7 +2,8 @@
   "name": "regexp-viewer",
   "version": "0.0.1",
   "dependencies": {
-    "react": "~0.13.1"
+    "react": "~0.13.1",
+    "bootstrap": "~3.3.5"
   },
   "authors": [
     "takumi4ichi <takumi4ichi@gmail.com>"

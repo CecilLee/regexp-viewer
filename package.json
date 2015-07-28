@@ -29,7 +29,7 @@
     "mocha": "^2.2.4"
   },
   "dependencies": {
-    "jregexp": "^0.0.3"
+    "jregexp": "0.0.6"
   },
   "keywords": [
     "lib",
