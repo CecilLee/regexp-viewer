@@ -1,0 +1,38 @@
+{
+  "name": "RegexpViewer",
+  "description": "Regular Expression Viewer",
+  "version": "0.0.1",
+  "homepage": "https://github.com/takumi4ichi",
+  "author": {
+    "name": "takumi4ichi",
+    "email": "takumi4ichi@gmail.com"
+  },
+  "main": "./src/jregexp.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:takumi4ichi/regexp-viewer.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "/blob/master/LICENSE"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "mocha": "^2.2.4",
+    "chai": "^2.3.0"
+  },
+  "dependencies": {
+    "jregexp": "^0.0.3"
+  },
+  "keywords": [
+    "lib",
+    "regexp",
+    "javascript",
+    "parser"
+  ]
+}
