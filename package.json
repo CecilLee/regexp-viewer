@@ -1,16 +1,16 @@
 {
   "name": "regexp-viewer",
   "description": "Regular Expression Viewer",
-  "version": "0.0.2",
-  "homepage": "https://github.com/takumi4ichi",
+  "version": "0.0.3",
+  "homepage": "https://github.com/cecillee",
   "author": {
-    "name": "takumi4ichi",
-    "email": "takumi4ichi@gmail.com"
+    "name": "CecilLee",
+    "email": "cciscecil@gmail.com"
   },
   "main": "./src/jregexp.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:takumi4ichi/regexp-viewer.git"
+    "url": "git@github.com:cecillee/regexp-viewer.git"
   },
   "licenses": [
     {
